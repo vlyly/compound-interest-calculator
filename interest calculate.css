@@ -134,9 +134,9 @@ img {
   display: flex;
   align-items: center;
   visibility: hidden;
-  width: 80%;
   height: 150px;
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 .result {
