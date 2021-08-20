@@ -96,7 +96,7 @@ function checkAll() {
     for (let l = 1; l <= repetition_input.value; l++) {
       userFundsMoneyInput = userFundsMoneyInput * interest_rate;
 
-      if (!isFinite(userFundsMoneyInput)) {
+      if (userFundsMoneyInput > 100000000000000) {
         result.style.visibility = "visible";
         result.classList.add("font_red");
         result.innerHTML = "계산 범위를 초과했습니다.";
@@ -106,7 +106,8 @@ function checkAll() {
     }
 
     result.style.visibility = "visible";
-    result.innerHTML = `최종 금액은 ${Number(
+    result.classList.remove("font_red");
+    result.innerHTML = `최종 금액은</br>${Number(
       userFundsMoneyInput
     ).toLocaleString("ko-KR")}원</br>입니다.`;
 
