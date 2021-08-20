@@ -89,20 +89,20 @@ img {
 
 .input_container > h3 {
   width: 65px;
-  font-size: 14px;
-  line-height: 30px;
+  font-size: 15px;
+  line-height: 35px;
   color: rgb(37, 43, 20);
 }
 
 .input_container > input {
   width: 130px;
-  height: 30px;
+  height: 35px;
   padding: 0 10px;
   border: transparent;
   border-bottom: 1px solid rgb(187, 197, 143);
   background-color: transparent;
   color: rgb(37, 43, 20);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 900;
 }
 
@@ -123,6 +123,7 @@ img {
   background-color: rgb(208, 223, 157);
   color: darkolivegreen;
   font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
   font-weight: 900;
 }
 
@@ -142,6 +143,7 @@ img {
 .result {
   text-align: center;
   font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
 }
 
 .font_red {
