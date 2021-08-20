@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+img {
+  display: block;
+}
+
+/****/
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(237, 249, 183);
+}
+
+.logo {
+  position: relative;
+  top: 10%;
+}
+
+.logo > img {
+  position: relative;
+  z-index: 1;
+  width: 120px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.logo::before {
+  display: none;
+  position: absolute;
+  z-index: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  margin: 0 30.266px;
+  background-color: rgb(149, 173, 114);
+  content: "";
+}
+
+.logo > h1 {
+  font-family: "Lobster", cursive;
+  font-size: 20px;
+  line-height: 1em;
+  text-align: center;
+}
+
+.input_area {
+  margin: 80px 0 50px 0;
+}
+
+.input_container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.input_container > h3 {
+  width: 65px;
+  font-size: 14px;
+  line-height: 30px;
+  color: rgb(37, 43, 20);
+}
+
+.input_container > input {
+  width: 130px;
+  height: 30px;
+  padding: 0 10px;
+  border: transparent;
+  border-bottom: 1px solid rgb(187, 197, 143);
+  background-color: transparent;
+  color: rgb(37, 43, 20);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.input_container > span {
+  height: 1.3em;
+  margin: 0 5px;
+  color: rgb(37, 43, 20);
+  font-size: 13px;
+}
+
+.submit_button {
+  display: block;
+  width: 100px;
+  margin-top: 10px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: rgb(208, 223, 157);
+  color: darkolivegreen;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+}
+
+.submit_button:active {
+  transform: scale(0.95);
+}
+
+.result_container {
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  width: 80%;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.result {
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.font_red {
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 350px;
+    height: 600px;
+    margin: auto;
+    border-radius: 20px;
+  }
+
+  .logo {
+    top: 15%;
+  }
+
+  .input_area {
+    margin: 100px 0 50px 0;
+  }
+}
