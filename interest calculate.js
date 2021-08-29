@@ -5,6 +5,7 @@ const submit_button = document.getElementById("submit_button");
 const result = document.getElementById("result");
 const number_pattern = /^\d*$/;
 const prime_number_pattern = /^\d*(\.?\d*)$/;
+let fundsMoneyOldValue = "";
 
 // String.prototype.insertcommas = function () {
 //   const num = this;
@@ -24,7 +25,7 @@ const prime_number_pattern = /^\d*(\.?\d*)$/;
 
 //   num_with_commas = num_arr.join("");
 //   return num_with_commas;
-// }; 수제 메서드
+// };
 
 String.prototype.deletcommas = function () {
   let num = this;
@@ -37,24 +38,27 @@ String.prototype.deletcommas = function () {
 };
 
 function fundsMoneyInputKeyup() {
-  let userFundsMoneyInput = funds_money_input.value.deletcommas();
+  let userFundsMoneyNumber = funds_money_input.value.deletcommas();
 
-  if (userFundsMoneyInput.length === 0) {
+  if (
+    !number_pattern.test(userFundsMoneyNumber) &&
+    userFundsMoneyNumber.length <= 1
+  ) {
+    funds_money_input.value = "";
+
     return false;
-  }
-  funds_money_input.value = Number(fundsMoneyInputKeydown()).toLocaleString(
-    "ko-KR"
-  );
-}
+  } //첫 번째 입력 문자가 숫자가 아닐시
 
-function fundsMoneyInputKeydown() {
-  let userFundsMoneyInput = funds_money_input.value.deletcommas();
+  if (!number_pattern.test(userFundsMoneyNumber)) {
+    funds_money_input.value =
+      Number(fundsMoneyOldValue).toLocaleString("ko-KR");
 
-  if (!number_pattern.test(userFundsMoneyInput)) {
-    userFundsMoneyInput = userFundsMoneyInput.slice(0, -1);
-  }
+    return false;
+  } //입력한 문자에 숫자가 아닌 문자가 포함되어 있을 시 직전 값을 input값에 적용
 
-  return userFundsMoneyInput;
+  funds_money_input.value =
+    Number(userFundsMoneyNumber).toLocaleString("ko-KR");
+  fundsMoneyOldValue = funds_money_input.value.deletcommas(); //새로운 value를 콤마 제거 후 전역으로 저장
 }
 
 function checkAll() {
@@ -120,5 +124,4 @@ function checkAll() {
 }
 
 funds_money_input.addEventListener("keyup", fundsMoneyInputKeyup);
-funds_money_input.addEventListener("keydown", fundsMoneyInputKeydown);
 submit_button.addEventListener("click", checkAll);
