@@ -14,18 +14,15 @@ let fundsMoneyOldValue = "";
 //   let j = num.length - 3;
 
 //   for (let i = num.length - 1; i >= 0; i--) {
-//     console.log(j);
-
 //     if (i == j && i != 0) {
 //       num_arr.splice(i, 0, ",");
-//       console.log(num_arr);
 //       j -= 3;
 //     }
 //   }
 
 //   num_with_commas = num_arr.join("");
 //   return num_with_commas;
-// };
+// }; //콤마를 삽입하는 메서드
 
 String.prototype.deletcommas = function () {
   let num = this;
