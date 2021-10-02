@@ -7,7 +7,7 @@ const number_pattern = /^\d*$/;
 const prime_number_pattern = /^\d*(\.?\d*)$/;
 let fundsMoneyOldValue = "";
 
-// String.prototype.insertcommas = function () {
+// String.prototype.insertCommas = function () {
 //   const num = this;
 //   let num_arr = Array.prototype.slice.apply(num);
 //   let num_with_commas = "";
@@ -24,7 +24,7 @@ let fundsMoneyOldValue = "";
 //   return num_with_commas;
 // }; //콤마를 삽입하는 메서드
 
-String.prototype.deletcommas = function () {
+String.prototype.removeCommas = function () {
   let num = this;
 
   for (var k = num.length - 1; k >= 0; k--) {
@@ -35,7 +35,7 @@ String.prototype.deletcommas = function () {
 };
 
 function fundsMoneyInputKeyup() {
-  let userFundsMoneyNumber = funds_money_input.value.deletcommas();
+  let userFundsMoneyNumber = funds_money_input.value.removeCommas();
 
   if (
     !number_pattern.test(userFundsMoneyNumber) &&
@@ -55,13 +55,13 @@ function fundsMoneyInputKeyup() {
 
   funds_money_input.value =
     Number(userFundsMoneyNumber).toLocaleString("ko-KR");
-  fundsMoneyOldValue = funds_money_input.value.deletcommas(); //새로운 value를 콤마 제거 후 전역으로 저장
+  fundsMoneyOldValue = funds_money_input.value.removeCommas(); //새로운 value를 콤마 제거 후 전역으로 저장
 }
 
 function checkAll() {
   let interest_rate = "";
   let result_money = "";
-  let userFundsMoneyInput = funds_money_input.value.deletcommas();
+  let userFundsMoneyInput = funds_money_input.value.removeCommas();
 
   if (
     funds_money_input.value &&
