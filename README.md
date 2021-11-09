@@ -1,5 +1,5 @@
 # <h2>💸복리 계산기💸</h2>
-원금에 복리를 계산해주는 계산기<br>
+원금에 복리를 계산해주는 계산기<strong>(Internet Explorer 미지원)</strong><br>
 
 <h3>목차</h3>
 l. 목표<br>
